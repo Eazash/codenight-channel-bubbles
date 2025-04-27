@@ -1,10 +1,12 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "db:generate": "drizzle-kit generate",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -16,13 +18,14 @@
     "@nuxt/image": "^1.10.0",
     "@nuxthub/core": "0.8.25",
     "@nuxtjs/tailwindcss": "^6.13.2",
+    "drizzle-orm": "^0.43.1",
     "nuxt": "^3.16.2",
     "vue": "latest",
     "vue-router": "latest"
   },
-  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
+    "drizzle-kit": "^0.31.0",
     "eslint": "^9.23.0",
     "typescript": "^5.8.2",
     "wrangler": "^4.13.2"

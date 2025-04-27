@@ -11,12 +11,15 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxthub/core'
+    '@nuxthub/core',
   ],
   eslint: {
-    config : {
+    config: {
       stylistic: false,
-      standalone: false
-    }
-  }
+      standalone: false,
+    },
+  },
+  hub: {
+    database: true,
+  },
 })
