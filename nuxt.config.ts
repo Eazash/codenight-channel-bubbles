@@ -27,4 +27,8 @@ export default defineNuxtConfig({
       tasks: true,
     },
   },
+  runtimeConfig: {
+    botToken: '',
+    botUrl: 'https://api.telegram.org/bot',
+  },
 })
