@@ -1,4 +1,5 @@
 import { createConsola, LogLevels } from 'consola'
+import { channels_seed_data } from '~~/server/database/seed/channels'
 import { tables, useDrizzle } from '~~/server/utils/drizzle'
 
 const taskName = 'db:seed'
@@ -16,14 +17,12 @@ export default defineTask({
     const drizzle = useDrizzle()
 
     consola.log('Seeding database with channels')
-    const channels = [
-      { name: 'Dagmawi Babi', channelUsername: '@Dagmawi_Babi' },
-      { name: 'Dave Dumps', channelUsername: '@DaveDumps' },
-      { name: 'The Blogrammer', channelUsername: '@the_blogrammer' },
-      { name: 'Beka', channelUsername: '@bekacru_c' },
-    ]
-    consola.log(`Seeding database with ${channels.length} channels`)
-    await drizzle.insert(tables.channels).values(channels)
+    consola.log(`Seeding database with ${channels_seed_data.length} channels`)
+    // Batch writes as a workaround for https://github.com/drizzle-team/drizzle-orm/issues/2479
+    const chunkSize = 10
+    for (let i = 0; i < channels_seed_data.length; i += chunkSize) {
+      await drizzle.insert(tables.channels).values(channels_seed_data.slice(i, i + chunkSize).map(channelUsername => ({ channelUsername }))).onConflictDoNothing().returning({ id: tables.channels.id })
+    }
     consola.log('Seeding channels complete')
     return {
       result: 'success',
