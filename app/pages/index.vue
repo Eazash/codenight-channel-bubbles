@@ -64,6 +64,7 @@ onMounted(() => {
       .force('x', d3.forceX().strength(0.01))
       .force('y', d3.forceY().strength(0.01))
       .force('collide', d3.forceCollide<ChannelNodeDatum>().radius(d => toRadius(d.members) + 1).iterations(3))
+      .force('charge', d3.forceManyBody<ChannelNodeDatum>().strength(d => -d.r))
       .force('center', d3.forceCenter())
       .on('tick', ticked)
   }
