@@ -30,8 +30,9 @@ export default defineTask({
           chat_id: channel.chatId || channel.channelUsername,
         },
       })
+      consola.log({ chat_id: channel.chatId || channel.channelUsername, members: response.result })
       if (response.ok && response.result) {
-        await drizzle.update(tables.channels).set({ members: response.result, updatedAt: new Date() })
+        await drizzle.update(tables.channels).set({ members: response.result, updatedAt: new Date() }).where(eq(tables.channels.id, channel.id))
         channel.members = response.result
       }
     }
