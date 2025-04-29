@@ -46,7 +46,7 @@ onMounted(() => {
     const svgSelection = d3.select<SVGSVGElement, ChannelNodeDatum>(canvasRef.value)
       .attr('width', windowWidth.value)
       .attr('height', windowHeight.value)
-    d3Nodes.value = svgSelection.selectAll('circle')
+    d3Nodes.value = svgSelection.selectAll<SVGCircleElement, ChannelNodeDatum>('circle')
       .data(nodes.value)
       .join('circle')
       .attr('r', d => d.r)
