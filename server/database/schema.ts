@@ -3,7 +3,7 @@ import { check, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 
 export const channels = sqliteTable('channels', {
   id: integer('id').primaryKey(),
-  name: text('name').notNull(),
+  name: text('name'),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(CURRENT_TIMESTAMP)`),
   chatId: text('chat_id'),
   channelUsername: text('channel_username'),
