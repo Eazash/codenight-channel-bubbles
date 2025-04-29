@@ -39,8 +39,6 @@ const nodes = computed<ChannelNodeDatum[]>(() => {
 })
 const simulation = ref<d3.Simulation<ChannelNodeDatum, undefined>>()
 const d3Nodes = shallowRef<d3.Selection<SVGCircleElement, ChannelNodeDatum, SVGSVGElement, ChannelNodeDatum>>()
-const tooltip = useTemplateRef('tooltip')
-const hoveredChannelName = ref<string>()
 onMounted(() => {
   if (canvasRef.value) {
     const svgSelection = d3.select<SVGSVGElement, ChannelNodeDatum>(canvasRef.value)
@@ -106,12 +104,7 @@ onBeforeUnmount(() => {
       <p>Loading</p>
     </div>
     <div v-else class="relative">
-      <p ref="tooltip" class="absolute z-10">
-        {{ hoveredChannelName }}
-      </p>
-      <!-- eslint-disable-next-line vue/html-self-closing -->
-      <svg id="canvas" ref="d3-dest">
-      </svg>
+      <svg id="canvas" ref="d3-dest" />
     </div>
   </div>
 </template>
