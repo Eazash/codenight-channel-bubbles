@@ -41,6 +41,9 @@ importers:
       nuxt:
         specifier: ^3.16.2
         version: 3.16.2(@parcel/watcher@2.4.1)(@types/node@22.7.7)(db0@0.3.1(drizzle-orm@0.43.1(@cloudflare/workers-types@4.20250427.0)))(drizzle-orm@0.43.1(@cloudflare/workers-types@4.20250427.0))(eslint@9.24.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.36.0)(typescript@5.8.2)(vite@6.2.4(@types/node@22.7.7)(jiti@2.4.2)(terser@5.36.0)(yaml@2.7.1))(yaml@2.7.1)
+      sleep-promise:
+        specifier: ^9.1.0
+        version: 9.1.0
       tippy.js:
         specifier: ^6.3.7
         version: 6.3.7
@@ -4800,6 +4803,9 @@ packages:
 
   slashes@3.0.12:
     resolution: {integrity: sha512-Q9VME8WyGkc7pJf6QEkj3wE+2CnvZMI+XJhwdTPR8Z/kWQRXi7boAWLDibRPyHRTUTPx5FaU7MsyrjI3yLB4HA==}
+
+  sleep-promise@9.1.0:
+    resolution: {integrity: sha512-UHYzVpz9Xn8b+jikYSD6bqvf754xL2uBUzDFwiU6NcdZeifPr6UfgU43xpkPu67VMS88+TI2PSI7Eohgqf2fKA==}
 
   smob@1.5.0:
     resolution: {integrity: sha512-g6T+p7QO8npa+/hNx9ohv1E5pVCmWrVCUzUXJyLdMmftX6ER0oiWY/w9knEonLpnOp6b6FenKnMfR8gqwWdwig==}
@@ -11098,6 +11104,8 @@ snapshots:
   slash@5.1.0: {}
 
   slashes@3.0.12: {}
+
+  sleep-promise@9.1.0: {}
 
   smob@1.5.0: {}
 
