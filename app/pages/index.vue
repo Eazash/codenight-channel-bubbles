@@ -13,18 +13,14 @@ const canvasRef = useTemplateRef('d3-dest')
 const context = computed(() => {
   return canvasRef.value?.getContext('2d')
 })
-const width = computed(() => {
-  return canvasRef.value?.width ?? 0
-})
-const height = computed(() => {
-  return canvasRef.value?.height ?? 0
-})
+const { width, height } = useElementSize(canvasRef)
+const windowSize = useWindowSize()
 const { data: maxMembersCount } = useFetch('/api/max-members', {
   default: () => 1000,
 })
 const { data, status } = useLazyFetch('/api/channels')
-const membersCountToRadius = d3.scaleSqrt([0, maxMembersCount.value], [0, 200])
-const color = d3.scaleSequential(d3.interpolateRainbow).domain([0, maxMembersCount.value])
+const membersCountToRadius = d3.scaleSqrt([0, maxMembersCount.value], [0, 1])
+const color = d3.scaleSequential(d3.interpolateSinebow).domain([0, maxMembersCount.value])
 const nodes = computed<ChannelNodeDatum[]>(() => {
   return data.value?.map<ChannelNodeDatum>(channel => ({
     // r: Math.log10(channel.members),
@@ -51,6 +47,13 @@ watch(nodes, (newNodes) => {
   }
 }, {
   immediate: true,
+})
+
+watchEffect(() => {
+  if (canvasRef.value) {
+    canvasRef.value.width = windowSize.width.value
+    canvasRef.value.height = windowSize.height.value
+  }
 })
 
 function ticked() {
@@ -83,7 +86,7 @@ onBeforeUnmount(() => {
       <p>Loading</p>
     </div>
     <div v-else>
-      <canvas id="canvas" ref="d3-dest" width="1440" height="600" />
+      <canvas id="canvas" ref="d3-dest" />
     </div>
   </div>
 </template>

@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxthub/core',
+    '@vueuse/nuxt',
   ],
   eslint: {
     config: {
