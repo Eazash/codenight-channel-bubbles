@@ -15,6 +15,13 @@
       "when": 1745916989676,
       "tag": "0001_bizarre_the_phantom",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1745918356882,
+      "tag": "0002_majestic_marvel_apes",
+      "breakpoints": true
     }
   ]
 }
