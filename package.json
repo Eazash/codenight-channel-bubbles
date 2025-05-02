@@ -7,8 +7,8 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "db:generate": "drizzle-kit generate",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "deploy": "nuxthub deploy",
+    "preview": "nuxthub preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
