@@ -2,7 +2,7 @@
   "name": "codenight-channel-bubbles",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "@nuxt/eslint": "^0.7.6",
-    "@nuxt/fonts": "^0.11.0",
-    "@nuxt/icon": "^1.11.0",
+    "@nuxt/fonts": "^0.11.2",
+    "@nuxt/icon": "^1.12.0",
     "@nuxt/image": "^1.10.0",
     "@nuxthub/core": "0.8.25",
-    "@nuxtjs/tailwindcss": "^6.13.2",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/nuxt": "13.1.0",
     "consola": "^3.4.2",
     "d3": "^7.9.0",
     "drizzle-orm": "^0.43.1",
-    "nuxt": "^3.16.2",
+    "nuxt": "^3.17.1",
     "sleep-promise": "^9.1.0",
     "tippy.js": "^6.3.7",
     "ufo": "^1.6.1",
@@ -30,11 +30,11 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.11.0",
+    "@antfu/eslint-config": "^4.12.0",
     "@types/d3": "^7.4.3",
     "drizzle-kit": "^0.31.0",
-    "eslint": "^9.23.0",
-    "typescript": "^5.8.2",
-    "wrangler": "^4.13.2"
+    "eslint": "^9.26.0",
+    "typescript": "^5.8.3",
+    "wrangler": "^4.14.1"
   }
 }
