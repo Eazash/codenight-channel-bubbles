@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  unicorn-magic: 0.2.0
+
 importers:
 
   .:
@@ -6321,12 +6324,8 @@ packages:
   unicode-trie@2.0.0:
     resolution: {integrity: sha512-x7bc76x0bm4prf1VLg79uhAzKw8DVboClSN5VxJuQ+LKDOVEW9CdH+VY7SP+vX7xCYQqzzgQpFqz15zeLvAtZQ==}
 
-  unicorn-magic@0.1.0:
-    resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
-    engines: {node: '>=18'}
-
-  unicorn-magic@0.3.0:
-    resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
+  unicorn-magic@0.2.0:
+    resolution: {integrity: sha512-q83y+/QtXrbKX1jYY+bdQROAbZj6EeSP+Plv0cYZBMPfirSaEvnnhMwRk2WH4n5XkNCQHygAiwTVNpvw3I1dCg==}
     engines: {node: '>=18'}
 
   unifont@0.2.0:
@@ -11189,7 +11188,7 @@ snapshots:
     dependencies:
       locate-path: 7.2.0
       path-exists: 5.0.0
-      unicorn-magic: 0.1.0
+      unicorn-magic: 0.2.0
 
   flat-cache@4.0.1:
     dependencies:
@@ -11413,7 +11412,7 @@ snapshots:
       ignore: 7.0.3
       path-type: 6.0.0
       slash: 5.1.0
-      unicorn-magic: 0.3.0
+      unicorn-magic: 0.2.0
 
   gonzales-pe@4.3.0:
     dependencies:
@@ -12641,7 +12640,7 @@ snapshots:
   npm-run-path@6.0.0:
     dependencies:
       path-key: 4.0.0
-      unicorn-magic: 0.3.0
+      unicorn-magic: 0.2.0
 
   npmlog@5.0.1:
     dependencies:
@@ -13358,7 +13357,7 @@ snapshots:
       normalize-package-data: 6.0.2
       parse-json: 8.2.0
       type-fest: 4.39.0
-      unicorn-magic: 0.1.0
+      unicorn-magic: 0.2.0
 
   readable-stream@2.3.8:
     dependencies:
@@ -14113,9 +14112,7 @@ snapshots:
       pako: 0.2.9
       tiny-inflate: 1.0.3
 
-  unicorn-magic@0.1.0: {}
-
-  unicorn-magic@0.3.0: {}
+  unicorn-magic@0.2.0: {}
 
   unifont@0.2.0:
     dependencies:
