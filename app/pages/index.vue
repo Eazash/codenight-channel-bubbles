@@ -8,6 +8,7 @@ type ChannelNodeDatum = {
   y: number
   r: number
   id: number
+  link: string
   members: number
   color: string
   name: string | null
@@ -35,6 +36,7 @@ const nodes = computed<ChannelNodeDatum[]>(() => {
     color: toColor(channel.members),
     members: (channel.members),
     name: channel.name ?? channel.channelUsername ?? channel.chatId,
+    link: `https://t.me/${channel.channelUsername?.replace('@', '') ?? channel.chatId}`,
   })) ?? []
 })
 const simulation = ref<d3.Simulation<ChannelNodeDatum, undefined>>()
@@ -50,13 +52,20 @@ onMounted(() => {
       .attr('r', d => d.r)
       .attr('cx', d => d.x + d.r)
       .attr('cy', d => d.y)
-      .attr('data-tippy-content', d => `<div class="space-y-2"><p class="text-medium">${d.name}</p><p>${d.members}</p></div>`)
+      .attr('data-tippy-content', d => `<div class="space-y-2"><a class="text-medium underline underline-white" href="${d.link}" target="_blank">${d.name}</a><p>${d.members}</p></div>`)
       .style('fill', d => d.color)
-
-    tippy.setDefaultProps({
-      allowHTML: true,
-    })
-    tippy(d3Nodes.value?.nodes() ?? [])
+      .each(function () {
+        const node = d3.select(this).node()
+        if (node) {
+          tippy(node, {
+            allowHTML: true,
+            interactive: true,
+            appendTo() {
+              return document.body
+            },
+          })
+        }
+      })
 
     simulation.value = d3.forceSimulation(nodes.value)
       .alphaTarget(0.2) // Stay hot
