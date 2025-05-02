@@ -95,7 +95,7 @@ function ticked() {
 
 onBeforeUnmount(() => {
   simulation.value?.stop()
-  d3Nodes.value?.exit()
+  d3Nodes.value?.exit().remove()
 })
 </script>
 
